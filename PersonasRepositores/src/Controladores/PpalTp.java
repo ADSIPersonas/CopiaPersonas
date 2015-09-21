@@ -20,6 +20,8 @@ public class PpalTp {
         // TODO code application logic here
         iniciar();
     }
+    
+    //Comentario para borrar
       public  static void iniciar(){
          new ControladoresTipoPersona(new FrmTipoPersona()).Iniciar();
     }
