@@ -168,6 +168,10 @@ public class ControladoresHistorial_Laboral implements ActionListener, MouseList
                 break;
             }
             case __AGREGAR_HISTORIAL:{  
+                if (this.vtnHistoriaLaboral.jDateChooserFEgreso.getDate().before(this.vtnHistoriaLaboral.jDateChooserFIngreso.getDate())){
+                    JOptionPane.showMessageDialog(this.vtnHistoriaLaboral.jTextDocumento, "La fecha de egreso no debe ser posterior a la fecha de Ingreso");
+                    this.vtnHistoriaLaboral.jDateChooserFEgreso.requestFocus();
+                }
                 
 //                 Date fecha1,fecha2;
 //                     fecha1 = this.vtnHistoriaLaboral.jDateChooserFIngreso.getDate();

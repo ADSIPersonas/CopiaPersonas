@@ -156,6 +156,7 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
         jBtnAdicionarHistorial.setBounds(230, 270, 142, 23);
 
         jBtnAgregarHistorial.setText("Agregar Historial");
+        jBtnAgregarHistorial.setEnabled(false);
         jBtnAgregarHistorial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jBtnAgregarHistorialMouseEntered(evt);
@@ -208,6 +209,12 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
         });
         getContentPane().add(jTextDocumento);
         jTextDocumento.setBounds(120, 10, 170, 20);
+
+        jDateChooserFEgreso.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jDateChooserFEgresoPropertyChange(evt);
+            }
+        });
         getContentPane().add(jDateChooserFEgreso);
         jDateChooserFEgreso.setBounds(450, 70, 170, 20);
 
@@ -261,6 +268,7 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
         jDateChooserFIngreso.setEnabled(false);
         //jBtnAgregarHistorial.setEnabled(false);
         jBtnAdicionarHistorial.setEnabled(false);
+        jBtnVerHisorial.setEnabled(true);
         this.deshabilitarMenu();
     }//GEN-LAST:event_jBtnAgregarHistorialActionPerformed
 
@@ -339,15 +347,18 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
     private void jDateChooserFIngresoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooserFIngresoPropertyChange
         // TODO add your handling code here:
         ((JTextField)this.jDateChooserFIngreso.getDateEditor().getUiComponent()).setEditable(false);
-        //((JTextField)this.jDateChooserFEgreso.getDateEditor().getUiComponent()).setEditable(false);
-        this.jBtnAgregarHistorial.setEnabled(true);
+        
         java.util.Date fecha = new Date();        
-        if (this.jDateChooserFIngreso.getDate()!=null){
-            if (fecha.before(this.jDateChooserFIngreso.getDate())){
-             this.jDateChooserFIngreso.setDate(fecha);
-            }
-        }
+        if (this.jDateChooserFIngreso.getDate()!= null){            
+             this.jBtnAgregarHistorial.setEnabled(true);
+        }                 
     }//GEN-LAST:event_jDateChooserFIngresoPropertyChange
+
+    private void jDateChooserFEgresoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooserFEgresoPropertyChange
+        // TODO add your handling code here:
+        ((JTextField)this.jDateChooserFEgreso.getDateEditor().getUiComponent()).setEditable(false);
+        
+    }//GEN-LAST:event_jDateChooserFEgresoPropertyChange
 
     /**
      * @param args the command line arguments
