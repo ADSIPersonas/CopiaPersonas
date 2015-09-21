@@ -26,6 +26,7 @@ public class ControladoresHistorial_Laboral implements ActionListener, MouseList
     HistoriaLaboralModelo modelo = new HistoriaLaboralModelo();
     
     public enum AccionMVC{
+        //Lista de elementos  constantes
         __VER_HISTORIAL,
         __AGREGAR_HISTORIAL,
 //        __ELIMINAR_HISTORIAL,

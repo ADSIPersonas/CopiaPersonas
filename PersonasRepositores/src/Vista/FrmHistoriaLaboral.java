@@ -339,7 +339,7 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
     private void jDateChooserFIngresoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooserFIngresoPropertyChange
         // TODO add your handling code here:
         ((JTextField)this.jDateChooserFIngreso.getDateEditor().getUiComponent()).setEditable(false);
-        ((JTextField)this.jDateChooserFEgreso.getDateEditor().getUiComponent()).setEditable(false);
+        //((JTextField)this.jDateChooserFEgreso.getDateEditor().getUiComponent()).setEditable(false);
         this.jBtnAgregarHistorial.setEnabled(true);
         java.util.Date fecha = new Date();        
         if (this.jDateChooserFIngreso.getDate()!=null){
