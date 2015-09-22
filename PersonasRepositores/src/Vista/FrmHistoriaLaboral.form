@@ -120,7 +120,6 @@
     <Component class="javax.swing.JButton" name="jBtnAgregarHistorial">
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar Historial"/>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jBtnAgregarHistorialMouseEntered"/>
