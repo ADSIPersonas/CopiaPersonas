@@ -10,8 +10,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -66,15 +64,15 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
      public  void deshabilitarMenu(){
         jCbCodigoCargo.setEnabled(false);
         jCbCodigoOficina.setEnabled(false);
-        jDateChooserFIngreso.setEnabled(false);
-        jDateChooserFEgreso.setEnabled(false);
+//        jDateChooserFIngreso.setEnabled(false);
+//        jDateChooserFEgreso.setEnabled(false);
     } 
     
     public void habilitarMenu(){
         jCbCodigoCargo.setEnabled(true);
         jCbCodigoOficina.setEnabled(true);
-        jDateChooserFIngreso.setEnabled(true);
-        jDateChooserFEgreso.setEnabled(true);        
+//        jDateChooserFIngreso.setEnabled(true);
+//        jDateChooserFEgreso.setEnabled(true);        
     }
     /**
      * This method is called from within the constructor to initialize the form.

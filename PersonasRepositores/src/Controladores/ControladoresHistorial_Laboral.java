@@ -136,23 +136,7 @@ public class ControladoresHistorial_Laboral implements ActionListener, MouseList
                 
             }
             case __ADICIONAR_HISTORIAL:{
-                
-//                     this.vtnHistoriaLaboral.jLbCodigoCargo.setVisible(true);
-//                     this.vtnHistoriaLaboral.   jLbCodigoOficina.setVisible(true);
-//                     this.vtnHistoriaLaboral.  jLbFechaIngreso.setVisible(true);
-//                     this.vtnHistoriaLaboral.  jLbFechaIngreso.setVisible(true);
-//                     this.vtnHistoriaLaboral.  jLbDocumento.setVisible(true);
-//                     this.vtnHistoriaLaboral.  jLblNombre.setVisible(false);
-//                     this.vtnHistoriaLaboral. jCbCodigoCargo.setVisible(true);
-//                     this.vtnHistoriaLaboral. jCbCodigoOficina.setVisible(true);
-//                     this.vtnHistoriaLaboral. jDateChooserFEgreso.setVisible(true);
-//                     this.vtnHistoriaLaboral.  jDateChooserFIngreso.setVisible(true);
-//                     this.vtnHistoriaLaboral. jTextDocumento.setVisible(true);
-//                     this.vtnHistoriaLaboral. jTextNombre.setVisible(false); 
-                
-                
-                
-            
+                                         
                 this.vtnHistoriaLaboral.jTextDocumento.setEditable(true);
 //                this.vtnHistoriaLaboral.jTextNombre.setEditable(true);
                 this.vtnHistoriaLaboral.jDateChooserFIngreso.setVisible(true);
@@ -176,30 +160,7 @@ public class ControladoresHistorial_Laboral implements ActionListener, MouseList
                         break;
                     }   
                 }
-                                                    
-//                 Date fecha1,fecha2;
-//                     fecha1 = this.vtnHistoriaLaboral.jDateChooserFIngreso.getDate();
-//                     fecha2 = this.vtnHistoriaLaboral.jDateChooserFEgreso.getDate();
-//        
-//                if (fecha2.after(fecha1)){
-//                    JOptionPane.showMessageDialog(null, "La fecha no debe ser posterior a la de hoy!! ");    
-//                    this.vtnHistoriaLaboral.jDateChooserFIngreso.setDate(null);
-//                    this.vtnHistoriaLaboral.jDateChooserFIngreso.requestFocus();
-//
-//
-//                
-//                }
-//                
-//                this.vtnHistoriaLaboral.jLbCodigoCargo.setVisible(false);
-//                this.vtnHistoriaLaboral.jLbCodigoOficina.setVisible(false);
-//                this.vtnHistoriaLaboral.jLbFechaIngreso.setVisible(false);
-//                this.vtnHistoriaLaboral.jLbFechaEgreso.setVisible(false);
-//                this.vtnHistoriaLaboral.jCbCodigoCargo.setVisible(false);
-//                this.vtnHistoriaLaboral.jCbCodigoOficina.setVisible(false);
-//                this.vtnHistoriaLaboral.jDateChooserFEgreso.setVisible(false);
-//                this.vtnHistoriaLaboral.jDateChooserFIngreso.setVisible(false);
-                
-                    
+                                                                                     
                 
                 if (this.modelo.NuevoHistorial(
                         this.vtnHistoriaLaboral.jTextDocumento.getText(),
@@ -220,16 +181,7 @@ public class ControladoresHistorial_Laboral implements ActionListener, MouseList
                 JOptionPane.showMessageDialog(vtnHistoriaLaboral,"Datos Incorrectos!.");
             break;
         }
-//        case __ELIMINAR_HISTORIAL:{
-//        if(this.modelo.EliminarHistorial(this.vtnHistoriaLaboral.jTextDocumento.getText())){
-//            this.vtnHistoriaLaboral.jTableHistoriaLaboral.setModel(this.modelo.getTablaHistorial(this.vtnHistoriaLaboral.jTextDocumento.getText()));
-//            JOptionPane.showMessageDialog(vtnHistoriaLaboral, "Historial Eliminado.");
-//            this.vtnHistoriaLaboral.jTextDocumento.setText("");
-//            //this.vtnHistoriaLaboral.jTextNombre.setText("");
-//       
-//             }
-//          break;
-//           }
+
         case __NOMBRE:{
             this.vtnHistoriaLaboral.jTextNombre.setText(this.modelo.TraerNombre(this.vtnHistoriaLaboral.jTextDocumento.getText()));
           break;
