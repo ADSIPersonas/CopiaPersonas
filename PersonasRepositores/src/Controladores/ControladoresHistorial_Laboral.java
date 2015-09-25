@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -24,13 +25,15 @@ public class ControladoresHistorial_Laboral implements ActionListener, MouseList
     
     FrmHistoriaLaboral vtnHistoriaLaboral;
     HistoriaLaboralModelo modelo = new HistoriaLaboralModelo();
+   
+    
     
     public enum AccionMVC{
-        //Lista de elementos  constantes
+
         __VER_HISTORIAL,
         __AGREGAR_HISTORIAL,
-//        __ELIMINAR_HISTORIAL,
         __ADICIONAR_HISTORIAL,
+        __NUEVO_HISTORIAL,
         __NOMBRE
     } 
     
@@ -42,6 +45,9 @@ public class ControladoresHistorial_Laboral implements ActionListener, MouseList
         }        
         return null;
     }
+    
+   
+    
     
     public ControladoresHistorial_Laboral(FrmHistoriaLaboral vista){
         this.vtnHistoriaLaboral = vista;
@@ -74,8 +80,8 @@ public class ControladoresHistorial_Laboral implements ActionListener, MouseList
         this.vtnHistoriaLaboral.jBtnAgregarHistorial.setActionCommand("__AGREGAR_HISTORIAL");
         this.vtnHistoriaLaboral.jBtnAgregarHistorial.addActionListener(this);
         
-//        this.vtnHistoriaLaboral.jBtnEliminarHistorial.setActionCommand("__ELIMINAR_HISTORIAL");
-//        this.vtnHistoriaLaboral.jBtnEliminarHistorial.addActionListener(this);
+        this.vtnHistoriaLaboral.jBtnNuevoHistorial.setActionCommand("__NUEVO_HISTORIAL");
+        this.vtnHistoriaLaboral.jBtnNuevoHistorial.addActionListener(this);
         
         this.vtnHistoriaLaboral.jTextDocumento.setActionCommand("__NOMBRE");
         this.vtnHistoriaLaboral.jTextDocumento.addActionListener(this);        
@@ -136,23 +142,36 @@ public class ControladoresHistorial_Laboral implements ActionListener, MouseList
                 
             }
             case __ADICIONAR_HISTORIAL:{
+                
+                this.vtnHistoriaLaboral.jTableHistoriaLaboral.setModel(this.modelo.getTablaHistorial
+                    (this.vtnHistoriaLaboral.jTextDocumento.getText()));
+                this.vtnHistoriaLaboral.jTableHistoriaLaboral.requestFocus();                                                
+                   
                                          
                 this.vtnHistoriaLaboral.jTextDocumento.setEditable(true);
-//                this.vtnHistoriaLaboral.jTextNombre.setEditable(true);
+                this.vtnHistoriaLaboral.jTextNombre.setEditable(true);
                 this.vtnHistoriaLaboral.jDateChooserFIngreso.setVisible(true);
                 this.vtnHistoriaLaboral.jCbCodigoCargo.setEditable(true);
                 this.vtnHistoriaLaboral.jCbCodigoOficina.setEditable(true);
                 this.vtnHistoriaLaboral.jDateChooserFEgreso.setVisible(true);
                 this.vtnHistoriaLaboral.jTextDocumento.requestFocus();
+//                this.vtnHistoriaLaboral.jTextDocumento.setText("");
 //                this.vtnHistoriaLaboral.jTextNombre.setText("");
-////                this.vtnHistoriaLaboral.jDateChooserFIngreso.setDateFormatString("");
-//                this.vtnHistoriaLaboral.jCbCodigoCargo.setSelectedItem("");
-//                this.vtnHistoriaLaboral.jCbCodigoOficina.setSelectedItem("");
-//                this.vtnHistoriaLaboral.jDateChooserFEgreso.setDateFormatString("");
+//                this.vtnHistoriaLaboral.jTableHistoriaLaboral.setModel(new DefaultTableModel());
+//                this.vtnHistoriaLaboral.jDateChooserFIngreso.setDate(null);
+////                this.vtnHistoriaLaboral.jCbCodigoCargo.setSelectedItem("");
+////                this.vtnHistoriaLaboral.jCbCodigoOficina.setSelectedItem("");
+//                this.vtnHistoriaLaboral.jDateChooserFEgreso.setDate(null);                
+               this.vtnHistoriaLaboral.jDateChooserFIngreso.setDate(new Date());
+}
                 break;
-            }
+                
+                
+//        this.vtnHistoriaLaboral.jTableHistoriaLaboral.addMouseListener(this);
+//        this.vtnHistoriaLaboral.jTableHistoriaLaboral.setModel(new DefaultTableModel());
+           
             case __AGREGAR_HISTORIAL:{  
-                //JOptionPane.showMessageDialog(vtnHistoriaLaboral, this.vtnHistoriaLaboral.jDateChooserFEgreso.getDate());
+              
                 if (this.vtnHistoriaLaboral.jDateChooserFEgreso.getDate() != null){                                                                                
                     if(this.vtnHistoriaLaboral.jDateChooserFEgreso.getDate().before(this.vtnHistoriaLaboral.jDateChooserFIngreso.getDate())){
                         JOptionPane.showMessageDialog(this.vtnHistoriaLaboral.jTextDocumento, "La fecha de egreso no debe ser posterior a la fecha de Ingreso");
@@ -170,19 +189,34 @@ public class ControladoresHistorial_Laboral implements ActionListener, MouseList
                         this.vtnHistoriaLaboral.jCbCodigoOficina.getSelectedItem().toString(),
                         FormatoFecha(this.vtnHistoriaLaboral.jDateChooserFEgreso.getDate()))){
                 this.vtnHistoriaLaboral.jTableHistoriaLaboral.setModel(this.modelo.getTablaHistorial(this.vtnHistoriaLaboral.jTextDocumento.getText()));
-                JOptionPane.showMessageDialog(vtnHistoriaLaboral, "Historial  Creado!.");
-                this.vtnHistoriaLaboral.jTextDocumento.setText("");
-                this.vtnHistoriaLaboral.jDateChooserFIngreso.setDateFormatString("");
-                this.vtnHistoriaLaboral.jCbCodigoCargo.setSelectedItem("");
-                this.vtnHistoriaLaboral.jCbCodigoOficina.setSelectedItem("");
-                this.vtnHistoriaLaboral.jDateChooserFEgreso.setDateFormatString("");
+                JOptionPane.showMessageDialog(vtnHistoriaLaboral, "Historial  Creado!.");//                             
             }
             else
                 JOptionPane.showMessageDialog(vtnHistoriaLaboral,"Datos Incorrectos!.");
             break;
         }
+            
+        case __NUEVO_HISTORIAL:{  
+            
+//            
+                this.vtnHistoriaLaboral.jTextDocumento.setText("");
+                this.vtnHistoriaLaboral.jTextNombre.setText("");
+                this.vtnHistoriaLaboral.jDateChooserFIngreso.setDate(null);
+//                this.vtnHistoriaLaboral.jCbCodigoCargo.setSelectedItem("");
+//                this.vtnHistoriaLaboral.jCbCodigoOficina.setSelectedItem("");
+                this.vtnHistoriaLaboral.jDateChooserFEgreso.setDate(null);
+                this.vtnHistoriaLaboral.jTableHistoriaLaboral.setModel(new DefaultTableModel());
+                break;
+////            
+        }
+              
+      
+            
 
         case __NOMBRE:{
+             this.vtnHistoriaLaboral.jTableHistoriaLaboral.setModel(this.modelo.getTablaHistorial
+             (this.vtnHistoriaLaboral.jTextDocumento.getText()));
+             this.vtnHistoriaLaboral.jTableHistoriaLaboral.requestFocus(); 
             this.vtnHistoriaLaboral.jTextNombre.setText(this.modelo.TraerNombre(this.vtnHistoriaLaboral.jTextDocumento.getText()));
           break;
            }
@@ -199,6 +233,10 @@ public class ControladoresHistorial_Laboral implements ActionListener, MouseList
         for (int i = 0; i < arreglo.length; i++) {
             this.vtnHistoriaLaboral.jCbCodigoOficina.addItem(arreglo[i]);            
         }
+    }
+      
+    private void limpiarFrmHistLabo(){
+
     }
 }
 
