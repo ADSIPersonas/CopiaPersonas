@@ -91,29 +91,29 @@ public class ControladoresTipoPersona implements ActionListener, MouseListener{
                         this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 0)));
                 this.vtnTipoPersona.jTextNombre.setText(String.valueOf(
                         this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 1)));
-                this.vtnTipoPersona.jTextFlApellido.setText(String.valueOf(
-                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 2)));
-                this.vtnTipoPersona.jTextTelefono.setText(String.valueOf(
-                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 3)));
-                this.vtnTipoPersona.jTextMovil.setText(String.valueOf(
-                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 4)));
-                this.vtnTipoPersona.jTextDireccion.setText(String.valueOf(
-                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 5)));
                 this.vtnTipoPersona.jTextEmail.setText(String.valueOf(
-                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 6)));
-                this.vtnTipoPersona.jTextContacto.setText(String.valueOf(
-                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 7)));
-                this.vtnTipoPersona.jTextWeb.setText(String.valueOf(
-                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 8)));
+                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 2)));
+                this.vtnTipoPersona.jTextDireccion.setText(String.valueOf(
+                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 3)));
+//                this.vtnTipoPersona.jTextMovil.setText(String.valueOf(
+//                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 4)));
+//                this.vtnTipoPersona.jTextDireccion.setText(String.valueOf(
+//                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 5)));
+//                this.vtnTipoPersona.jTextEmail.setText(String.valueOf(
+//                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 6)));
+//                this.vtnTipoPersona.jTextContacto.setText(String.valueOf(
+//                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 7)));
+//                this.vtnTipoPersona.jTextWeb.setText(String.valueOf(
+//                        this.vtnTipoPersona.jTblPersonas.getValueAt(fila, 8)));
                 this.vtnTipoPersona.jTextDocumento.setEditable(false);
                 this.vtnTipoPersona.jTextNombre.setEditable(false);
-                this.vtnTipoPersona.jTextFlApellido.setEditable(false);
-                this.vtnTipoPersona.jTextTelefono.setEditable(false);
-                this.vtnTipoPersona.jTextMovil.setEditable(false);
-                this.vtnTipoPersona.jTextDireccion.setEditable(false);
                 this.vtnTipoPersona.jTextEmail.setEditable(false);
-                this.vtnTipoPersona.jTextContacto.setEditable(false);
-                this.vtnTipoPersona.jTextWeb.setEditable(false);
+                this.vtnTipoPersona.jTextDireccion.setEditable(false);
+//                this.vtnTipoPersona.jTextMovil.setEditable(false);
+//                this.vtnTipoPersona.jTextDireccion.setEditable(false);
+//                this.vtnTipoPersona.jTextEmail.setEditable(false);
+//                this.vtnTipoPersona.jTextContacto.setEditable(false);
+//                this.vtnTipoPersona.jTextWeb.setEditable(false);
                
                  
             }

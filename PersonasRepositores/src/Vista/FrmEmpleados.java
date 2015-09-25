@@ -245,7 +245,7 @@ public class FrmEmpleados extends javax.swing.JFrame {
             }
         });
 
-        jBtnCrear.setText("Crear");
+        jBtnCrear.setText("Crear Empleado");
         jBtnCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnCrearActionPerformed(evt);
@@ -267,7 +267,7 @@ public class FrmEmpleados extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTblEmpleados);
 
-        jBtnModificar.setText("Modificar");
+        jBtnModificar.setText("Modificar Empleado");
 
         jTextNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -345,10 +345,10 @@ public class FrmEmpleados extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
+                        .addGap(82, 82, 82)
                         .addComponent(jBtnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(108, 108, 108)
-                        .addComponent(jBtnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(105, 105, 105)
+                        .addComponent(jBtnModificar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -424,12 +424,10 @@ public class FrmEmpleados extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jBtnCrear)
+                    .addComponent(jBtnModificar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        getAccessibleContext().setAccessibleName("Empleados ");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

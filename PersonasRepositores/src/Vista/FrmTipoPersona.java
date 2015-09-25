@@ -276,6 +276,11 @@ public class FrmTipoPersona extends javax.swing.JFrame {
         });
 
         jBtnVerPersona.setText("Ver Persona");
+        jBtnVerPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnVerPersonaActionPerformed(evt);
+            }
+        });
 
         jBtnAdicionarPersona.setText("Adicionar Persona");
         jBtnAdicionarPersona.addActionListener(new java.awt.event.ActionListener() {
@@ -541,6 +546,34 @@ public class FrmTipoPersona extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
    
+        jBtnAdicionarPersona.setEnabled(false);
+        jBtnAgregarPersona.setEnabled(false);
+        jBtnEliminar.setEnabled(false);
+        jLabelContacto.setEnabled(false);
+        jLabelWeb.setEnabled(false);
+        jTextContacto.setEnabled(false);
+        jTextWeb.setEnabled(false);
+        jLabelSExo.setEnabled(false);
+        jRadioButtonFemenico.setEnabled(false);
+        jRadioButtonMasculino.setEnabled(false);
+        jLabelApellido.setEnabled(false);
+        jTextFlApellido.setEnabled(false);
+        jTextDocumento.setEnabled(false);
+        jLbDocumento.setEnabled(false);
+        jTextNombre.setEnabled(false);
+        jLabelNombre.setEnabled(false);
+        jTextMovil.setEnabled(false);
+        jLabelMovil.setEnabled(false);
+        jLabelCiudad.setEnabled(false);
+        jLabelDepartamento.setEnabled(false);
+        jCbBoxCiudades.setEnabled(false);
+        jCbBoxDepartamento.setEnabled(false);
+        jLabelDireccion.setEnabled(false);
+        jTextDireccion.setEnabled(false);
+        jLabelTelefono.setEnabled(false);
+        jTextTelefono.setEnabled(false);
+        jLabelEmail.setEnabled(false);
+        jTextEmail.setEnabled(false);
     }//GEN-LAST:event_formWindowOpened
 
     private void jCbBoxDepartamentoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCbBoxDepartamentoItemStateChanged
@@ -549,6 +582,9 @@ public class FrmTipoPersona extends javax.swing.JFrame {
 
     private void jBtnAdicionarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAdicionarPersonaActionPerformed
         // TODO add your handling code here:
+        
+        jBtnVerPersona.setEnabled(false);
+        jBtnAgregarPersona.setEnabled(true);
     }//GEN-LAST:event_jBtnAdicionarPersonaActionPerformed
 
     private void jRadioButtonFemenicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonFemenicoActionPerformed
@@ -565,8 +601,34 @@ public class FrmTipoPersona extends javax.swing.JFrame {
         jLabelSExo.setVisible(true);
         jRadioButtonFemenico.setVisible(true);
         jRadioButtonMasculino.setVisible(true);
-         jLabelApellido.setVisible(true);
+        jLabelApellido.setVisible(true);
         jTextFlApellido.setVisible(true);
+        jLabelContacto.setVisible(false);
+        jLabelWeb.setVisible(false);
+        jTextContacto.setVisible(false);
+        jTextWeb.setVisible(false);
+        jLabelSExo.setEnabled(true);
+        jRadioButtonFemenico.setEnabled(true);
+        jRadioButtonMasculino.setEnabled(true);
+        jLabelApellido.setEnabled(true);
+        jTextFlApellido.setEnabled(true);
+        jLbDocumento.setEnabled(true);
+        jTextDocumento.setEnabled(true);
+        jLabelNombre.setEnabled(true);
+        jTextNombre.setEnabled(true);
+        jLabelCiudad.setEnabled(true);
+        jCbBoxCiudades.setEnabled(true);
+        jLabelDepartamento.setEnabled(true);
+        jCbBoxDepartamento.setEnabled(true);
+        jLabelDireccion.setEnabled(true);
+        jTextDireccion.setEnabled(true);
+        jLabelTelefono.setEnabled(true);
+        jTextTelefono.setEnabled(true);
+        jLabelEmail.setEnabled(true);
+        jTextEmail.setEnabled(true);
+        jLabelMovil.setEnabled(true);
+        jTextMovil.setEnabled(true);
+        
         this.DeshabilitarMenu();
         
     }//GEN-LAST:event_jRdioBtnNaturalActionPerformed
@@ -578,11 +640,15 @@ public class FrmTipoPersona extends javax.swing.JFrame {
         jRadioButtonMasculino.setVisible(false);
         jLabelApellido.setVisible(false);
         jTextFlApellido.setVisible(false);
-        
         jLabelContacto.setVisible(true);
         jLabelWeb.setVisible(true);
         jTextContacto.setVisible(true);
         jTextWeb.setVisible(true);
+        jLabelContacto.setEnabled(true);
+        jLabelWeb.setEnabled(true);
+        jTextContacto.setEnabled(true);
+        jTextWeb.setEnabled(true);
+        
         
         this.HabilitarMenu();
     }//GEN-LAST:event_jRdioBtnJuridicaActionPerformed
@@ -604,6 +670,12 @@ public class FrmTipoPersona extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jTextDocumentoFocusLost
+
+    private void jBtnVerPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnVerPersonaActionPerformed
+        // TODO add your handling code here:
+        
+        jBtnAdicionarPersona.setEnabled(true);
+    }//GEN-LAST:event_jBtnVerPersonaActionPerformed
 
     /**
      * @param args the command line arguments

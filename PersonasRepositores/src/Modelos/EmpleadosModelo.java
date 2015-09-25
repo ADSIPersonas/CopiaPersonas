@@ -64,7 +64,7 @@ public class EmpleadosModelo extends Conexion{
             String sql = "insert into empleados(Documento , Codi_Rol, Fech_Nato, Email_Inst"
                    + " ) values('"+Documento+"',"+codigoR+",'"+Fech_Nato+"','"+Email_Inst+"');";
             
-            JOptionPane.showMessageDialog(null, sql);
+//            JOptionPane.showMessageDialog(null, sql);
             
             try {
                 PreparedStatement pstm = this.getConexion().prepareStatement(sql);

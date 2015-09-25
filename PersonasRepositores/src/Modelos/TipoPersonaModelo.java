@@ -80,7 +80,7 @@ public class TipoPersonaModelo extends Conexion{
                 sql ="INSERT INTO juridicas (documento,contacto,Web) VALUES ('"+Documento+"','"+Contacto+"','"+Web+"')";
             }
         }  
-        System.out.println(sql);
+      
         try {            
             PreparedStatement pstm = this.getConexion().prepareStatement(sql);
             pstm.execute();

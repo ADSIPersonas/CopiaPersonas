@@ -104,6 +104,8 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
         jCbCodigoCargo = new javax.swing.JComboBox();
         jCbCodigoOficina = new javax.swing.JComboBox();
         jBtnNuevoHistorial = new javax.swing.JButton();
+        jLbObligatorio = new javax.swing.JLabel();
+        jLblAsterico = new javax.swing.JLabel();
 
         jScrollPane1.setViewportView(jTextPane1);
 
@@ -171,7 +173,7 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
 
         jLbFechaIngreso.setText("Fecha de Ingreso: ");
         getContentPane().add(jLbFechaIngreso);
-        jLbFechaIngreso.setBounds(10, 72, 110, 14);
+        jLbFechaIngreso.setBounds(20, 70, 110, 14);
 
         jLbFechaEgreso.setText("Fecha de Egreso: ");
         getContentPane().add(jLbFechaEgreso);
@@ -215,7 +217,7 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jDateChooserFEgreso);
-        jDateChooserFEgreso.setBounds(450, 70, 170, 20);
+        jDateChooserFEgreso.setBounds(480, 70, 140, 20);
 
         jDateChooserFIngreso.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
@@ -223,7 +225,7 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jDateChooserFIngreso);
-        jDateChooserFIngreso.setBounds(120, 70, 170, 20);
+        jDateChooserFIngreso.setBounds(140, 70, 150, 20);
 
         getContentPane().add(jCbCodigoCargo);
         jCbCodigoCargo.setBounds(120, 40, 170, 20);
@@ -245,6 +247,16 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
         getContentPane().add(jBtnNuevoHistorial);
         jBtnNuevoHistorial.setBounds(330, 270, 134, 23);
 
+        jLbObligatorio.setForeground(new java.awt.Color(255, 0, 0));
+        jLbObligatorio.setText(" * Campo Obligatorio");
+        getContentPane().add(jLbObligatorio);
+        jLbObligatorio.setBounds(140, 90, 130, 20);
+
+        jLblAsterico.setForeground(new java.awt.Color(255, 0, 51));
+        jLblAsterico.setText("*");
+        getContentPane().add(jLblAsterico);
+        jLblAsterico.setBounds(10, 70, 20, 20);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -260,6 +272,7 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
         jCbCodigoOficina.setVisible(true);
         jDateChooserFEgreso.setVisible(true);
         jDateChooserFIngreso.setVisible(true);
+        jLblAsterico.setVisible(true);
         jTextDocumento.setVisible(true);
         jTextNombre.setVisible(true);  
         jBtnVerHisorial.setVisible(true);
@@ -268,6 +281,10 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
         jBtnAgregarHistorial.setEnabled(false);
         jBtnNuevoHistorial.setVisible(true);
         jBtnNuevoHistorial.setEnabled(true);
+        jTextDocumento.setEnabled(false);
+        jLbObligatorio.setVisible(true);
+        jCbCodigoCargo.requestFocus();
+        jLbObligatorio.setEnabled(true);
         
         this.habilitarMenu();
     }//GEN-LAST:event_jBtnAdicionarHistorialActionPerformed
@@ -319,6 +336,8 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
         jBtnAdicionarHistorial.setEnabled(false);
         jBtnNuevoHistorial.setEnabled(false);
         jBtnAgregarHistorial.setVisible(false);
+        jLbObligatorio.setVisible(false);
+        jLblAsterico.setVisible(false);
         
         this.deshabilitarMenu();
         
@@ -370,8 +389,10 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
         ((JTextField)this.jDateChooserFIngreso.getDateEditor().getUiComponent()).setEditable(false);
         
         java.util.Date fecha = new Date();        
-        if (this.jDateChooserFIngreso.getDate()!= null){            
+        if (this.jDateChooserFIngreso.getDate()!= null){  
+         if  (this.jTextDocumento.getText() != null){
              this.jBtnAgregarHistorial.setEnabled(true);
+         }
         }                 
     }//GEN-LAST:event_jDateChooserFIngresoPropertyChange
 
@@ -388,6 +409,7 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
     private void jBtnNuevoHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNuevoHistorialActionPerformed
         // TODO add your handling code here:
         jBtnAgregarHistorial.setVisible(true);
+        jTextDocumento.setEnabled(true);
         
     }//GEN-LAST:event_jBtnNuevoHistorialActionPerformed
 
@@ -440,6 +462,8 @@ public class FrmHistoriaLaboral extends javax.swing.JFrame {
     public javax.swing.JLabel jLbDocumento;
     public javax.swing.JLabel jLbFechaEgreso;
     public javax.swing.JLabel jLbFechaIngreso;
+    private javax.swing.JLabel jLbObligatorio;
+    private javax.swing.JLabel jLblAsterico;
     public javax.swing.JLabel jLblNombre;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
